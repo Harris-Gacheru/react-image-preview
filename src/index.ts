@@ -1,3 +1,4 @@
-export { default as ImagePreview } from "./components/imagePreview";
-export { default as PreviewModal } from "./components/previewModal";
-export { default } from "./components/imagePreview";
+import ImagePreview from "./components/imagePreview";
+import PreviewModal from "./components/previewModal";
+
+export { ImagePreview, PreviewModal };
