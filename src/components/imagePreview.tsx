@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box";
 import { FC, useState } from "react";
-import Image from "next/image";
 import Stack from "@mui/material/Stack";
 import Iconify from "./iconify";
 import { PreviewImage } from "@/types";
@@ -18,7 +17,16 @@ const ImagePreview: FC<ImagePreviewProps> = ({ label, alt, src, images }) => {
           height: "100%",
         }}
       >
-        <Image src={src} alt={alt ?? label ?? "preview image"} fill />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={src}
+          alt={alt ?? label ?? "preview image"}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+          }}
+        />
 
         <Stack
           alignItems="center"
