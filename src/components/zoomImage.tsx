@@ -4,8 +4,13 @@ import Box from "@mui/material/Box";
 import { FC } from "react";
 
 const ZoomImage: FC<ZoomImageProps> = ({ src, alt, label }) => {
-  const { scale, position, handleMouseMove, handleMouseUp, handleMouseDown } =
-    useZoom();
+  const {
+    scale,
+    position,
+    handleMouseMove,
+    handleMouseEnter,
+    handleMouseLeave,
+  } = useZoom();
 
   return (
     <Box
@@ -29,8 +34,8 @@ const ZoomImage: FC<ZoomImageProps> = ({ src, alt, label }) => {
           transformOrigin: `${position.x} ${position.y}`,
         }}
         onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseDown}
-        onMouseLeave={handleMouseUp}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       />
     </Box>
   );

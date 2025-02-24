@@ -29,7 +29,7 @@ const useZoom = (
   };
 
   // Handle drag start
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
     if (scale > 1) {
       setIsPanning(true);
       setStartCoords({ x: e.clientX - position.x, y: e.clientY - position.y });
@@ -43,7 +43,7 @@ const useZoom = (
   };
 
   // Handle drag end
-  const handleMouseUp = () => {
+  const handleMouseLeave = () => {
     setIsPanning(false);
   };
 
@@ -53,9 +53,9 @@ const useZoom = (
     zoomIn,
     zoomOut,
     resetZoom,
-    handleMouseDown,
+    handleMouseEnter,
     handleMouseMove,
-    handleMouseUp,
+    handleMouseLeave,
   };
 };
 
