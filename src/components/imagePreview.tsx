@@ -60,7 +60,7 @@ const ImagePreview: FC<ImagePreviewProps> = ({ label, alt, src, images }) => {
   );
 };
 
-type ImagePreviewProps = PreviewImage & {
+export type ImagePreviewProps = PreviewImage & {
   images?: PreviewImage[];
 };
 

@@ -230,7 +230,7 @@ const PreviewModal: FC<PreviewModalProps> = ({
   );
 };
 
-type PreviewModalProps = {
+export type PreviewModalProps = {
   previewImage: PreviewImage;
   images?: PreviewImage[];
   setDisplaypreview: Dispatch<SetStateAction<boolean>>;

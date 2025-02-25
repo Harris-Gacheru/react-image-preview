@@ -4,7 +4,12 @@ import dts from "vite-plugin-dts";
 import path from "path";
 
 export default defineConfig({
-  plugins: [react(), dts()],
+  plugins: [
+    react(),
+    dts({
+      insertTypesEntry: true,
+    }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
@@ -14,7 +19,7 @@ export default defineConfig({
     lib: {
       entry: "src/index.ts",
       name: "ReactImagePreview",
-      fileName: "react-image-preview",
+      fileName: (format) => `react-image-preview.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],
